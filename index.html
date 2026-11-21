@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire of Seasoning | Recetario Internacional</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Logo Empire of Seasoning" class="logo">
+            <div class="brand-text">
+                <h1>Empire of Seasoning</h1>
+                <p>El arte culinario de todas las culturas</p>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#recetas">Recetario</a></li>
+                <li><a href="#agregar-receta">Subir Receta</a></li>
+                <li><a href="#videos">Video Recetas</a></li>
+                <li><a href="#portales">Cocinas Oficiales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="recetas" class="recipes-section">
+            <h2>Explora Nuestras Recetas</h2>
+            
+            <div class="filters">
+                <div class="filter-group search-group">
+                    <label for="search-input">Buscar por plato o ingrediente:</label>
+                    <input type="text" id="search-input" placeholder="Ej. aguacate, pasta, pollo...">
+                </div>
+
+                <div class="filter-group">
+                    <label for="cuisine-filter">Tipo de Cocina:</label>
+                    <select id="cuisine-filter">
+                        <option value="todas">Todas las cocinas</option>
+                        <option value="mexicana">Mexicana</option>
+                        <option value="italiana">Italiana</option>
+                        <option value="japonesa">Japonesa</option>
+                        <option value="francesa">Francesa</option>
+                        <option value="francesa">Española</option>
+                        <option value="otra">Otra</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="difficulty-filter">Dificultad:</label>
+                    <select id="difficulty-filter">
+                        <option value="todas">Todas las dificultades</option>
+                        <option value="facil">Fácil</option>
+                        <option value="media">Media</option>
+                        <option value="dificil">Difícil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="recipes-grid" class="recipes-grid"></div>
+        </section>
+
+        <section id="agregar-receta" class="add-recipe-section">
+            <h2>Comparte Tu Propia Receta</h2>
+            <p class="section-desc">Añade tus creaciones culinarias al recetario oficial de Empire of Seasoning.</p>
+            
+            <form id="new-recipe-form" class="recipe-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="new-title">Nombre del Platillo:</label>
+                        <input type="text" id="new-title" required placeholder="Ej. Enchiladas Suizas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new-cuisine">Tipo de Cocina:</label>
+                        <select id="new-cuisine" required>
+                            <option value="mexicana">Mexicana</option>
+                            <option value="italiana">Italiana</option>
+                            <option value="japonesa">Japonesa</option>
+                            <option value="francesa">Francesa</option>
+                            <option value="francesa">Española</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new-difficulty">Dificultad:</label>
+                        <select id="new-difficulty" required>
+                            <option value="facil">Fácil</option>
+                            <option value="media">Media</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-description">Descripción Corta:</label>
+                    <input type="text" id="new-description" required placeholder="Breve resumen del platillo...">
+                </div>
+
+                <div class="form-group">
+                    <label for="new-ingredients">Ingredientes (sepáralos por comas):</label>
+                    <textarea id="new-ingredients" rows="3" required placeholder="Ej. 500g de pollo, 12 tortillas, 200g de queso manchego, crema"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="new-instructions">Pasos de Preparación:</label>
+                    <textarea id="new-instructions" rows="4" required placeholder="Describe cómo preparar el platillo paso a paso..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Guardar Receta en el Recetario</button> 
+            </form>
+        </section>
+
+        <section id="videos" class="videos-section">
+            <h2>Aprende Paso a Paso en Video</h2>
+            <p class="section-desc">Tutoriales seleccionados para dominar técnicas profesionales en casa.</p>
+            <div class="videos-grid">
+                <a href="https://www.youtube.com/watch?v=Z7SwhTZ5tOM" target="_blank" class="video-card">
+                    <span class="play-icon">▶</span>
+                    <h3>Cortes Básicos de Chef</h3>
+                    <p>Aprende a usar el cuchillo con seguridad y precisión.</p>
+                </a>
+                <a href="https://www.youtube.com/watch?v=OjEIM0NEDt4" target="_blank" class="video-card">
+                    <span class="play-icon">▶</span>
+                    <h3>Pasta Fresca Artesanal</h3>
+                    <p>El secreto de la masa italiana perfecta desde cero.</p>
+                </a>
+                <a href="https://www.youtube.com/watch?v=AixiViEtYSo" target="_blank" class="video-card">
+                    <span class="play-icon">▶</span>
+                    <h3>Las 5 Salsas Madre</h3>
+                    <p>Domina las bases de la alta gastronomía francesa.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="portales" class="portals-section">
+            <h2>Portales Oficiales de Gastronomía</h2>
+            <p class="section-desc">Amplía tus conocimientos visitando estas plataformas culinarias reconocidas.</p>
+            <div class="portals-grid">
+                <a href="https://laroussecocina.mx" target="_blank" class="portal-link">
+                    <h3>Larousse Cocina</h3>
+                    <p>Enciclopedia gastronómica y recetario tradicional mexicano.</p>
+                </a>
+                <a href="https://giallozafferano.com" target="_blank" class="portal-link">
+                    <h3>GialloZafferano</h3>
+                    <p>El portal oficial más grande de la auténtica cocina italiana.</p>
+                </a>
+                <a href="https://justonecookbook.com" target="_blank" class="portal-link">
+                    <h3>Just One Cookbook</h3>
+                    <p>Recetas japonesas caseras explicadas detalladamente.</p>
+                </a>
+                <a href="https://seriouseats.com" target="_blank" class="portal-link">
+                    <h3>Serious Eats</h3>
+                    <p>Ciencia culinaria y técnicas probadas de todo el mundo.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div class="modal-tags">
+                <span id="modal-cuisine" class="tag"></span>
+                <span id="modal-difficulty" class="tag"></span>
+            </div>
+            <h3>Ingredientes:</h3>
+            <ul id="modal-ingredients"></ul>
+            <h3>Preparación:</h3>
+            <p id="modal-instructions"></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Empire of Seasoning. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
